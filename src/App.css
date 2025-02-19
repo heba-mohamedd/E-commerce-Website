@@ -1,0 +1,45 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  background-color: #ae61aa;
+  height: 70px;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header ul li {
+  padding: 10px;
+  list-style: none;
+}
+.main {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer {
+  /* height: 50px; */
+  background-color: #ae61aa;
+  padding: 10px;
+}
+.product-wrapper {
+  height: 500px;
+  overflow: hidden;
+}
+
+.products-contianer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
