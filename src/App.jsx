@@ -1,7 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Layout from "./Component/Layout";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./page/Home";
 
 import Contact from "./page/Contact";
@@ -24,7 +28,7 @@ import AddProduct from "./page/UpLoadProduct/AddProduct";
 import UserContextProvider from "./Component/Context/UserContext";
 import { Toaster } from "react-hot-toast";
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path: "",
     element: <Layout />,
