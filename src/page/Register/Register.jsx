@@ -18,7 +18,7 @@ const Register = () => {
     // alert("user registered successfully");
     toast.success("user registered successfully");
     resetForm();
-    navigate("/");
+    navigate("/login");
   }
   let registerSchema = Yup.object().shape({
     name: Yup.string()
@@ -119,7 +119,7 @@ const Register = () => {
 
         <div className="mb-3">
           <label htmlFor="rePassword" className="form-label">
-            Confirm rePassword
+            Confirm Password
           </label>
 
           <input
