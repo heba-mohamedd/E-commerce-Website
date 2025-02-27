@@ -15,7 +15,7 @@ const SideBar = () => {
       setUserLogin(null);
       dispatch(logout());
 
-      navigate("/");
+      navigate("/login");
     }
 
     // alert("user logged out successfully");

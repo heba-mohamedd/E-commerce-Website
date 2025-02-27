@@ -17,8 +17,8 @@ const Register = () => {
     dispatch(fetchRegister(values));
     // alert("user registered successfully");
     toast.success("user registered successfully");
-    resetForm();
     navigate("/login");
+    resetForm();
   }
   let registerSchema = Yup.object().shape({
     name: Yup.string()
