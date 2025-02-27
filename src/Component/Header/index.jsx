@@ -82,7 +82,7 @@ const Header = ({ sidebar, setSideBar }) => {
                   </NavLink>
                 </li>
                 <li className="nav-item p-3">
-                  <NavLink className="nav-link" to="/login">
+                  <NavLink className="nav-link" to="/">
                     Login
                   </NavLink>
                 </li>
