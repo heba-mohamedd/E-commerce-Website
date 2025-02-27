@@ -8,21 +8,26 @@ import axiosInstance from "../../utils/axiosInstance";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLogin } from "../../redux/Slice/authSlice";
 import { UserContext } from "../../Component/Context/UserContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { loginError } = useSelector((state) => state.auth);
+  const { userLogin, setUserLogin } = useContext(UserContext);
 
   function handleLogin(values) {
     dispatch(fetchLogin(values))
       .unwrap()
       .then(() => {
-        alert("User logged in successfully");
+        // alert("User logged in successfully");
+        toast.success("User logged in successfully");
+        setUserLogin(localStorage.getItem("token"));
         navigate("/home");
       })
       .catch((error) => {
+        toast.error(error);
         console.log(error);
       });
   }

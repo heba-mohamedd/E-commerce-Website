@@ -21,6 +21,8 @@ import Account from "./page/Account";
 import ProductRoute from "./Component/ProductRoute";
 
 import AddProduct from "./page/UpLoadProduct/AddProduct";
+import UserContextProvider from "./Component/Context/UserContext";
+import { Toaster } from "react-hot-toast";
 
 const routes = createBrowserRouter([
   {
@@ -58,13 +60,16 @@ function App() {
     <>
       <Provider store={store}>
         <QueryClientProvider client={queryclient}>
-          <ThemeProvider>
-            <LanguageProvider>
-              <RouterProvider router={routes} />
-            </LanguageProvider>
-          </ThemeProvider>
+          <UserContextProvider>
+            <ThemeProvider>
+              <LanguageProvider>
+                <RouterProvider router={routes} />
+              </LanguageProvider>
+            </ThemeProvider>
+          </UserContextProvider>
         </QueryClientProvider>
       </Provider>
+      <Toaster />
     </>
   );
 }

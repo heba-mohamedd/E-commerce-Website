@@ -8,11 +8,13 @@ import LanguageContext from "../Context/LanguageContext.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../index.css";
 import routes from "./header.js";
+import { UserContext } from "../Context/UserContext.jsx";
 
 const Header = ({ sidebar, setSideBar }) => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { language, setLanguage } = useContext(LanguageContext);
   const { user } = useSelector((state) => state.auth);
+  const { userLogin } = useContext(UserContext);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -39,7 +41,7 @@ const Header = ({ sidebar, setSideBar }) => {
       } shadow`}
     >
       <div className="container-fluid">
-        {localStorage.getItem("token") && (
+        {userLogin && (
           <button
             className="btn btn-outline-primary me-3"
             onClick={() => setSideBar(!sidebar)}
@@ -64,7 +66,7 @@ const Header = ({ sidebar, setSideBar }) => {
           id="navbarNav"
         >
           <ul className="navbar-nav ms-auto">
-            {localStorage.getItem("token") ? (
+            {userLogin ? (
               routes.map((route) => (
                 <li className="nav-item p-3" key={route.href}>
                   <NavLink className="nav-link" to={route.href}>

@@ -7,6 +7,7 @@ import axios from "axios";
 import axiosInstance from "../../utils/axiosInstance";
 import { useDispatch } from "react-redux";
 import { fetchRegister } from "../../redux/Slice/authSlice";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -14,7 +15,8 @@ const Register = () => {
 
   function handleRegister(values) {
     dispatch(fetchRegister(values));
-    alert("user registered successfully");
+    // alert("user registered successfully");
+    toast.success("user registered successfully");
     resetForm();
     navigate("/");
   }
