@@ -7,7 +7,7 @@ const ProductRoute = ({ children }) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) {
-      navigate("/");
+      navigate("/home");
     }
   }, [user]);
   return children;

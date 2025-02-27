@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../assets/homeImage.jpg";
 // import HomeImage1 from "../../assets/Homepage1.jpg";
 // import HomeImage2 from "../../assets/Homepage2.jpg";
@@ -10,13 +10,15 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import image1 from "../../assets/image1.jpeg";
 import image2 from "../../assets/image2.jpeg";
 import image3 from "../../assets/image3.jpeg";
+import { UserContext } from "../../Component/Context/UserContext";
 
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
+  const { userLogin } = useContext(UserContext);
   console.log(user);
 
   return (
-    localStorage.getItem("token") && (
+    userLogin && (
       <>
         <div className="container-fluid p-0">
           <div className="row g-0">

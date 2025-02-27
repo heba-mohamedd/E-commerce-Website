@@ -32,11 +32,10 @@ const routes = createBrowserRouter([
       { path: "/home", element: <Home /> },
       {
         path: "/account",
-        element: (
-          <ProductRoute>
-            <Account />
-          </ProductRoute>
-        ),
+        element: <Account />,
+        // <ProductRoute>
+
+        // {/* </ProductRoute> */}
       },
       // { path: "/products", element: <Products /> },
       { path: "/contact", element: <Contact /> },
