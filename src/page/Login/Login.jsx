@@ -24,7 +24,7 @@ const Login = () => {
         // alert("User logged in successfully");
         toast.success("User logged in successfully");
         setUserLogin(localStorage.getItem("token"));
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error);

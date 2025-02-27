@@ -22,36 +22,92 @@ import ProductsWithThunk from "./page/ProductsWithThunk/ProductsWithThunk";
 import Register from "./page/Register/Register";
 import Login from "./page/Login/Login";
 import Account from "./page/Account";
-import ProductRoute from "./Component/ProductRoute";
 
 import AddProduct from "./page/UpLoadProduct/AddProduct";
 import UserContextProvider from "./Component/Context/UserContext";
 import { Toaster } from "react-hot-toast";
+import ProductedRoute from "./Component/ProductRoute/ProductedRoute";
 
 const routes = createHashRouter([
   {
     path: "",
     element: <Layout />,
     children: [
-      { path: "/home", element: <Home /> },
+      {
+        path: "/",
+        element: (
+          <ProductedRoute>
+            <Home />
+          </ProductedRoute>
+        ),
+      },
       {
         path: "/account",
-        element: <Account />,
-        // <ProductRoute>
-
-        // {/* </ProductRoute> */}
+        element: (
+          <ProductedRoute>
+            <Account />
+          </ProductedRoute>
+        ),
       },
       // { path: "/products", element: <Products /> },
-      { path: "/contact", element: <Contact /> },
-      { path: "/cart", element: <Cart /> },
-      { path: "/favourites", element: <Favourites /> },
-      { path: "/products/:id", element: <ProductDetails /> },
+      {
+        path: "/contact",
+        element: (
+          <ProductedRoute>
+            <Contact />
+          </ProductedRoute>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <ProductedRoute>
+            <Cart />
+          </ProductedRoute>
+        ),
+      },
+      {
+        path: "/favourites",
+        element: (
+          <ProductedRoute>
+            <Favourites />
+          </ProductedRoute>
+        ),
+      },
+      {
+        path: "/products/:id",
+        element: (
+          <ProductedRoute>
+            <ProductDetails />
+          </ProductedRoute>
+        ),
+      },
       { path: "*", element: <Notfound /> },
-      { path: "/ProductsWithThunk", element: <ProductsWithThunk /> },
-      { path: "/register", element: <Register /> },
+      {
+        path: "/ProductsWithThunk",
+        element: (
+          <ProductedRoute>
+            <ProductsWithThunk />
+          </ProductedRoute>
+        ),
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
       // { path: "/uploadproduct", element: <UpLoadProduct /> },
-      { path: "/addProduct", element: <AddProduct /> },
-      { index: true, element: <Login /> },
+      {
+        path: "/addProduct",
+        element: (
+          <ProductedRoute>
+            <AddProduct />
+          </ProductedRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
     ],
   },
 ]);
