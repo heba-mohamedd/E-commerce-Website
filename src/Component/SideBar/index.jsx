@@ -8,7 +8,6 @@ import { UserContext } from "../Context/UserContext";
 const SideBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userLogin, setUserLogin } = useContext(UserContext);
 
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to log out?")) {
