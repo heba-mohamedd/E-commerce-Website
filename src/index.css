@@ -19,16 +19,248 @@ a {
   all: unset !important;
   cursor: pointer !important;
 }
-.active {
-  text-decoration: underline;
-  font-size: 20px;
-  font-weight: bolder;
-  color: red;
+
+.card {
+  max-width: 18rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  animation: fadeIn 0.8s forwards;
+  opacity: 0;
 }
 
-.addbtn {
-  background-color: white;
-  border-color: #dfd1d1;
-  padding: 0 5px;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.cartBtn {
+  background: linear-gradient(135deg, rgb(61, 109, 143), rgb(80, 151, 202));
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.cartBtn:hover {
+  background: linear-gradient(135deg, rgb(80, 151, 202), rgb(61, 109, 143));
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.cartBtn:active {
+  transform: scale(0.95);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.increasing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.arrowBtn {
+  border: none;
+  background: transparent;
+  font-size: 40px;
+  padding: 5px;
   margin: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.arrowBtn:hover {
+  color: rgb(61, 109, 143);
+  transform: scale(1.2);
+}
+
+.arrowBtn:active {
+  transform: scale(0.9);
+}
+
+.addbtnfav {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.addbtnfav:hover {
+  transform: scale(1.2);
+}
+
+.fav-active {
+  color: red;
+  transform: scale(1.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .addbtnfav.fav-active {
+  color: gold;
+} */
+
+.bgMode {
+  background: none;
+  border: none;
+  margin-right: 30px;
+  font-size: 30px;
+}
+
+.sidebtn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  margin-right: 50px;
+}
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #2c3e50;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  list-style: none;
+  width: 100%;
+  background-color: #34495e;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+}
+
+.sidebar ul li:hover {
+  background-color: rgb(46, 142, 211);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.submitbtn {
+  width: 100%;
+  background-color: rgb(46, 142, 211);
+  padding: 6px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
+.navbar {
+  text-decoration: none;
+
+  /* border: 2px solid black; */
+}
+
+.navStyle {
+  list-style: none;
+  /* border: 2px solid black; */
+}
+
+.x {
+  background-color: rgba(201, 199, 199, 0.792);
+  /* border: 2px solid black; */
+}
+
+.languageButton {
+  border: 2px solid rgba(123, 121, 121, 0.792);
+  margin-top: 5px;
+  border-radius: 30px;
+  width: 120px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(83, 153, 203);
+  cursor: pointer;
+  margin: auto;
+  margin-left: 30px;
+}
+
+.languageButton button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.active {
+  font-weight: bolder !important;
+  text-decoration: underline !important;
+}
+
+.navbar-nav {
+  font-size: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
 }

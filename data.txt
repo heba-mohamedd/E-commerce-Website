@@ -1,0 +1,3 @@
+- do access for state by using use selector
+-action come with payload
+-

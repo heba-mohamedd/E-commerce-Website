@@ -21,7 +21,7 @@
 
 .header ul li {
   padding: 10px;
-  list-style: none;
+  /* list-style: none; */
 }
 .main {
   flex: 1;
@@ -30,8 +30,8 @@
 
 .footer {
   /* height: 50px; */
-  background-color: #ae61aa;
-  padding: 10px;
+  background-color: rgba(201, 199, 199, 0.792);
+  padding: 30px;
 }
 .product-wrapper {
   height: 500px;

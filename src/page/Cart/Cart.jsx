@@ -5,16 +5,29 @@ import { v4 } from "uuid";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const checkIsEmpty = useSelector((state) => state.cart.products);
 
   return (
     <>
-      <div className="products-contianer">
-        {cart.products?.map((product) => (
-          <>
-            <ProductCard product={product} key={product.id} isCartItem={true} />
-          </>
-        ))}
-      </div>
+      {checkIsEmpty.length === 0 ? (
+        <div class="alert alert-warning" role="alert">
+          <p className="mb-5 fs-1 fw-bolder text-center text-capitalize">
+            cart is empty
+          </p>
+        </div>
+      ) : (
+        <div className="products-contianer">
+          {cart.products?.map((product) => (
+            <>
+              <ProductCard
+                product={product}
+                key={product.id}
+                isCartItem={true}
+              />
+            </>
+          ))}
+        </div>
+      )}
 
       <div>
         <table className="table table-striped">

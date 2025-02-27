@@ -3,8 +3,7 @@ import "./App.css";
 import Layout from "./Component/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./page/Home";
-import About from "./page/About";
-import Products from "./page/Products";
+
 import Contact from "./page/Contact";
 import Notfound from "./page/NotFound/Notfound";
 import { ThemeProvider } from "./Component/Context/ThemeContext";
@@ -15,20 +14,39 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import Cart from "./page/Cart/Cart";
 import Favourites from "./page/Favourites/Favourites";
+import ProductsWithThunk from "./page/ProductsWithThunk/ProductsWithThunk";
+import Register from "./page/Register/Register";
+import Login from "./page/Login/Login";
+import Account from "./page/Account";
+import ProductRoute from "./Component/ProductRoute";
+
+import AddProduct from "./page/UpLoadProduct/AddProduct";
 
 const routes = createBrowserRouter([
   {
     path: "",
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "/about", element: <About /> },
-      { path: "/products", element: <Products /> },
+      { path: "/home", element: <Home /> },
+      {
+        path: "/account",
+        element: (
+          <ProductRoute>
+            <Account />
+          </ProductRoute>
+        ),
+      },
+      // { path: "/products", element: <Products /> },
       { path: "/contact", element: <Contact /> },
       { path: "/cart", element: <Cart /> },
       { path: "/favourites", element: <Favourites /> },
       { path: "/products/:id", element: <ProductDetails /> },
       { path: "*", element: <Notfound /> },
+      { path: "/ProductsWithThunk", element: <ProductsWithThunk /> },
+      { path: "/register", element: <Register /> },
+      // { path: "/uploadproduct", element: <UpLoadProduct /> },
+      { path: "/addProduct", element: <AddProduct /> },
+      { index: true, element: <Login /> },
     ],
   },
 ]);

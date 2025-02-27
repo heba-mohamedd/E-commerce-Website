@@ -1,0 +1,31 @@
+.x {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 30px;
+}
+.shopNowBtn {
+  background: linear-gradient(135deg, rgb(83, 153, 203), #ddedf4);
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.shopNowBtn:hover {
+  background: linear-gradient(135deg, #dff0f5, rgb(83, 153, 203));
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.shopNowBtn:active {
+  transform: translateY(2px);
+}
